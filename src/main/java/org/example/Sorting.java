@@ -44,4 +44,26 @@ public class Sorting {
             }
         }
     }
+
+    /*
+     * O(n^2) - worst case scenario, actually O(N^2 + 2N - 2)
+     * O(n) - best case scenario
+     * O(n^2/2) - average case
+     * */
+    public static void insertionSort(int[] arr){
+        for (int i=1;i<arr.length;i++){
+            int temp = arr[i];
+            int position = i-1;
+            while(position>=0){
+                if(temp<arr[position]){
+                    arr[position+1]= arr[position];
+                    position= position-1;
+                }
+                else{
+                    break;
+                }
+            }
+            arr[position+1]=temp;
+        }
+    }
 }
